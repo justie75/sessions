@@ -1,0 +1,13 @@
+<% if @error %>
+<font color="red"><b>U bent niet ingelogd<br></b></font>
+<a href="/sessions/new">Klik hier om in te loggen</a>
+<% else %>
+
+<h1>Welkom <%= @username %></h1>
+
+<p> U bent nu ingelogd </p>
+<form action="/sessions/welcome" method="post">
+	<input type="hidden" name="logout" value="true">
+	<input type="submit" value="Uitloggen">
+</form>
+<% end %>
